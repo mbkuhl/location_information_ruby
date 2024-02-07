@@ -5,12 +5,6 @@ class Api::V0::LocationInformationController < ApplicationController
   end
 
   def information
-    require 'pry'; binding.pry
-    render json: {
-      lat: params[:lat],
-      lon: params[:lon]
-    }
+    render json: LocationInformationFacade.get_info(params[:lat], params[:lon])
   end
-
-
 end

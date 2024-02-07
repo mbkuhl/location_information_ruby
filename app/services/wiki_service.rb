@@ -7,8 +7,6 @@ class WikiService
   def self.get_details(location)
     response = conn.get("api.php?action=query&format=json&prop=info&inprop=url&titles=#{location}")
     hash = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
     hash[:query][:pages].first[1][:fullurl]
-
   end
 end
