@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "api/v0/welcome", to: "api/v0/location_information#index"
+  get "api/v0/information", to: "api/v0/location_information#information"
 end
